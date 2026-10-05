@@ -1,0 +1,77 @@
+# TvTimi privacy policy
+
+Version of October 5, 2026.
+
+TvTimi is a free mobile app to keep track of the TV series and anime you watch. This page explains which data the app uses, why, for how long, and how to exercise your rights.
+
+## Who is responsible for your data
+
+TvTimi, an app published on a non-professional basis. For any question or request about your data: contact@tvtimi.fr.
+
+## The data TvTimi uses
+
+Your account: your email address, your password (Supabase stores it in encrypted form, nobody can read it), the app language when you signed up, and your first name if you choose to add it.
+
+Your tracking: the shows in your library and their status, the episodes marked as watched, your ratings per episode and per show.
+
+Your agreement to the terms: the version of the terms of use and of this policy that you accepted, with the date.
+
+Technical logs: when an error occurs in the app, a short technical message is recorded with your account identifier, to understand and fix the problem. It contains neither your email nor your password.
+
+TvTimi does not collect your location, your contacts or your photos. There is no advertising, no audience measurement and no advertising tracker.
+
+## Why, and on what basis
+
+Creating and running your account, keeping your library and your tracking across devices, sending you the confirmation and new password emails: this is necessary for the service you ask for when you create an account (performance of a contract).
+
+Keeping proof of your agreement to the terms: our legitimate interest in being able to show what you accepted.
+
+Technical logs: our legitimate interest in keeping the app working and secure.
+
+## For how long
+
+Your account, tracking and agreement data are kept as long as your account exists. When you delete your account from the app, they are erased immediately and permanently.
+
+Technical logs are erased automatically after 90 days.
+
+## Who has access
+
+Nobody but you sees your library or your ratings. We do not sell or rent any data.
+
+Two providers process data to run TvTimi, only on our instructions:
+
+- Supabase hosts the accounts and the data, in a data center located in Ireland (European Union).
+- Resend sends the confirmation and new password emails, from Ireland.
+
+Both companies are American. If any data were to be accessed from the United States, it would be under the standard contractual clauses of the European Commission.
+
+Information about series and anime (titles, summaries, images) comes from TMDB. TvTimi queries TMDB from its servers, without ever sending it any data about you.
+
+## Your rights
+
+At any time, you can:
+
+- view and download your data: Profile, Export my data (a JSON file);
+- correct your first name: Profile, Edit my profile;
+- delete your account and all your data: Profile, Delete my account;
+- ask for access, rectification, erasure or restriction, or object to a processing, by writing to contact@tvtimi.fr. We answer within one month.
+
+The export does not contain the technical logs: they are internal error messages, erased after 90 days.
+
+If you believe your rights are not respected, you can lodge a complaint with the CNIL (cnil.fr), the French data protection authority, or with the authority of the country where you live.
+
+## Security
+
+Exchanges between the app and the servers are encrypted. Each account can only access its own data, a rule enforced by the database itself. On your phone, your session is stored in the system's secure storage (Keychain on iPhone, encrypted storage on Android).
+
+## Minimum age
+
+TvTimi is reserved for people aged 15 and over.
+
+## Changes
+
+If this policy changes, its version and date change at the top of this page. For a significant change, the app tells you before it applies.
+
+## Contact
+
+contact@tvtimi.fr
