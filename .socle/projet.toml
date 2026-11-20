@@ -59,4 +59,8 @@ runner = "ubuntu"   # dépôt public (public = true) : pas de CI GitHub du socle
 # raison = "clé publique du fichier Figma"
 # (sans `fichier` : la valeur est exemptée dans tous les fichiers, ex. l'URL publique de prod)
 
-# [legal]
+[legal]   # éditeur non professionnel (LCEN, article 1-1, II) : seuls l'hébergeur et le contact sont publiés
+editeur = "P.Dev"
+contact = "contact@tvtimi.fr"
+# Déclaration de confidentialité de GitHub (St. y est abrégé) ; le pays est écrit dans chaque langue par src/legal-notice-*.md
+hebergeur = "GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107"   # même forme que les CGU
