@@ -21,8 +21,8 @@ header {
   padding-top: 20px; padding-bottom: 20px;
 }
 .brand { color: var(--text); font-weight: 700; font-size: 22px; text-decoration: none; }
-nav a { color: var(--muted); margin-left: 12px; text-decoration: none; }
-nav a[aria-current="page"] { color: var(--accent); font-weight: 700; }
+header nav a { color: var(--muted); margin-left: 12px; text-decoration: none; }
+header nav a[aria-current="page"] { color: var(--accent); font-weight: 700; }
 h1 { font-size: 28px; line-height: 1.25; margin: 8px 0 4px; }
 h1 + p { color: var(--muted); margin-top: 0; }
 h2 { font-size: 20px; margin: 32px 0 8px; }
@@ -34,3 +34,4 @@ footer {
   margin-top: 48px; padding-top: 20px; padding-bottom: 40px;
   border-top: 1px solid var(--surface);
 }
+footer nav { line-height: 2; }
