@@ -1,0 +1,62 @@
+# Profil de projet socle de tvtimi-site, site public de TvTimi (relu avec Patrick le 20 nov. 2026).
+
+[projet]
+nom = "tvtimi-site"            # obligatoire
+repo = "Paprika2787/tvtimi-site"
+notion_projet = "https://app.notion.com/p/3d0b2c4f036d801ba6b4cf4fca668471"   # projet TvTimi (même produit)
+carte_conformite = "https://app.notion.com/p/3e8b2c4f036d81779a94db64840c5117"   # 312 « Store — Audit final §20 », celle de TvTimi
+sentry_projet = "aucun"   # site statique, pas de projet Sentry
+# figma = ""
+langues = ["fr", "en", "es"]
+# insecable_permis = []   # fichiers où l'espace insécable réelle est voulue (ex. ["lib/l10n/*"]) ; ailleurs refusée
+public = true   # dépôt public : ni CI GitHub du socle (privé), ni adresse personnelle dans les commits
+
+[stack]
+type = "web"
+# ressource = ""
+# dependances = ""   # installe les paquets en tête de --all, local et CI (ex. "npm ci", "flutter pub get")
+# format = ""
+# lint = ""
+build = "python3 build.py"   # pages HTML depuis src/*.md
+tests = "bash scripts/verifier-pages.sh"   # pages à jour dans l'index git et pages attendues présentes
+# tests_cibles = ""
+# extra = []
+
+# [supabase]
+# actif = false
+# ports = 559       # obligatoire si actif = true : préfixe à 3 chiffres, unique sur la machine (544 = ports 544xx)
+# mode_migration = "sql-editor-repair"   # ou "db-push"
+# projet_prod = ""
+# tests_db = false
+# edge_functions = false   # deno fmt, lint, check et test ; une fonction avec son deno.json est vérifiée depuis son dossier
+
+# [e2e]
+# outil = ""
+# commande = ""
+# simulateur = ""   # nom ou UDID ; la commande le reçoit dans $SOCLE_E2E_SIMULATEUR
+# rapport = ""   # rapport JUnit écrit par les flows (maestro test --format junit --output …) : un ✓ ou ✗ par flow
+# installation = ""   # lancée avant les flows (pas en --rapide) : démarrer le simulateur, construire et installer l'app
+# commande_rapide = ""   # mêmes flows sans build ni teardown de départ, avec {flows} : socle ci --flows … --rapide
+# cibles = []   # fichiers qui fixent la cible des tests (ex. ["maestro/.env.local"]) : socle doctor --e2e
+
+[ci_github]
+runner = "ubuntu"   # dépôt public (public = true) : pas de CI GitHub du socle
+# preparation = []
+# secrets = []     # secrets GitHub transmis aux commandes en CI (ex. ["SUPABASE_URL"]) ; absent : tous
+
+# [git]
+# pre_push_etapes = []   # vide = toutes les étapes de --all
+
+# [secrets]
+# fichiers = []   # chemins exacts, ou noms (joker permis) valables à toute profondeur, comme dans .gitignore
+# autorises = []   # fichiers entiers exemptés : préférer [[secrets.exemptions]]
+#
+# Un faux positif vérifié, recopié depuis la sortie de l'étape secrets :
+# [[secrets.exemptions]]
+# fichier = "design/tokens.json"
+# motif = "gitleaks:generic-api-key"
+# empreinte = "3f9a1c0b7e2d"
+# raison = "clé publique du fichier Figma"
+# (sans `fichier` : la valeur est exemptée dans tous les fichiers, ex. l'URL publique de prod)
+
+# [legal]
