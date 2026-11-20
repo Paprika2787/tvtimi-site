@@ -1,0 +1,36 @@
+/* Couleurs et rayons du design system TvTimi (fichier Figma). Polices du
+   systeme : aucune ressource tierce, donc aucun traceur. */
+:root {
+  color-scheme: dark;
+  --bg: #263238;
+  --surface: #37474f;
+  --text: #eceff1;
+  --muted: #b0bec5;
+  --accent: #f5b942;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+header, main, footer { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 20px; padding-bottom: 20px;
+}
+.brand { color: var(--text); font-weight: 700; font-size: 22px; text-decoration: none; }
+nav a { color: var(--muted); margin-left: 12px; text-decoration: none; }
+nav a[aria-current="page"] { color: var(--accent); font-weight: 700; }
+h1 { font-size: 28px; line-height: 1.25; margin: 8px 0 4px; }
+h1 + p { color: var(--muted); margin-top: 0; }
+h2 { font-size: 20px; margin: 32px 0 8px; }
+a { color: var(--accent); }
+ul { padding-left: 22px; }
+li { margin: 6px 0; }
+footer {
+  color: var(--muted); font-size: 15px;
+  margin-top: 48px; padding-top: 20px; padding-bottom: 40px;
+  border-top: 1px solid var(--surface);
+}
