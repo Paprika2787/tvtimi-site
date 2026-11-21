@@ -1,0 +1,9 @@
+# GitHub Pages (Jekyll) : ne publier que le site. Les fichiers et dossiers qui commencent par un point
+# sont déjà exclus ; les pages HTML sans en-tête, style.css et CNAME sont copiés tels quels.
+exclude:
+  - src/
+  - tests/
+  - scripts/
+  - build.py
+  - README.md
+  - CLAUDE.md

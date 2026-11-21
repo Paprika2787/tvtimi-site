@@ -3,7 +3,9 @@
 Les chemins attendus sont écrits ici, indépendamment de build.py : ce sont les URL
 de l'app et des fiches des stores. Bibliothèque standard seulement.
 """
+import os
 import re
+import subprocess
 import tomllib
 import unittest
 from html.parser import HTMLParser
@@ -65,6 +67,19 @@ def page(sorte: str, langue: str) -> Page:
     return Page(fichier(CHEMINS[sorte][langue]))
 
 
+def exclusions_jekyll() -> set[str]:
+    """Entrées de la clé exclude de _config.yml (commentaires ignorés, jusqu'à la clé suivante)."""
+    entrees, dans_exclude = set(), False
+    for ligne in (RACINE / "_config.yml").read_text(encoding="utf-8").splitlines():
+        if ligne.lstrip().startswith("#") or not ligne.strip():
+            continue
+        if not ligne.startswith(" "):
+            dans_exclude = ligne.split("#")[0].strip() == "exclude:"
+        elif dans_exclude and ligne.startswith("  - "):
+            entrees.add(ligne[4:].split("#")[0].strip())
+    return entrees
+
+
 def toutes_les_pages():
     """(langue du pied de page, Page) pour les 17 pages attendues."""
     yield "fr", Page(RACINE / "index.html")
@@ -110,6 +125,22 @@ class TestGabarit(unittest.TestCase):
         for _, p in toutes_les_pages():
             adresses |= set(re.findall(r"[\w.+-]+@[\w-]+(?:\.[\w-]+)+", p.brut))
         self.assertEqual(adresses, {"contact@tvtimi.fr"})
+
+    def test_publication_limitee_au_site(self):
+        # GitHub Pages (Jekyll) ne publie que le site : sources, outils et notes exclus par _config.yml,
+        # sinon README.md et src/*.md deviendraient des pages (marqueurs non remplacés) sur tvtimi.fr.
+        exclus = exclusions_jekyll()
+        self.assertEqual(exclus, {"src/", "tests/", "scripts/", "build.py", "README.md", "CLAUDE.md"})
+        self.assertFalse((RACINE / ".nojekyll").exists())
+        site = {"index.html", "404.html", "style.css", "CNAME"}
+        site |= {CHEMINS[s][l].lstrip("/") + "/index.html" for s in CHEMINS for l in LANGUES}
+        env = {k: v for k, v in os.environ.items() if not k.startswith("GIT_")}
+        suivis = subprocess.run(["git", "ls-files"], cwd=RACINE, env=env, check=True,
+                                capture_output=True, text=True).stdout.split()
+        publies = [f for f in suivis
+                   if f not in site and not f.startswith((".", "_"))
+                   and not any(f == e or (e.endswith("/") and f.startswith(e)) for e in exclus)]
+        self.assertEqual(publies, [], "fichiers suivis publiés sur tvtimi.fr sans faire partie du site")
 
     def test_url_de_l_app(self):  # RG14
         for url in ("/cgu", "/confidentialite", "/en/terms", "/en/privacy",

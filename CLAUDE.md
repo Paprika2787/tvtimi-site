@@ -19,7 +19,7 @@ Process : skill `carte` du socle
 
 - Pages générées : `.claude/rules/pages-generees.md`.
 - Texte légal changé (CGU ou confidentialité) : date de version en tête des six textes et `LegalDocuments.version`
-  dans l'app TvTimi (dépôt privé), relus par Patrick avant toute mise en ligne.
+  dans l'app TvTimi (dépôt privé), relus par le propriétaire du projet avant toute mise en ligne.
 - Éditeur, hébergeur et contact : table `[legal]` du profil ; les sources les citent par `{editeur}`,
   `{hebergeur}` (hébergeur du site seul) et `{contact}`, sauf les CGU et la politique (versionnées, valeurs
   écrites à la main) ; détail dans la règle des pages générées.
@@ -27,4 +27,5 @@ Process : skill `carte` du socle
 ## Où chercher
 
 - `build.py` : sortes de page et chemins par langue (`PAGES`), gabarit, sélecteur de langue, pied de page.
-- `src/` : textes source ; `tests/test_pages.py` ; `style.css` ; `CNAME` (domaine de Pages).
+- `src/` : textes source ; `tests/test_pages.py` ; `style.css` ; `CNAME` (domaine de Pages) ; `_config.yml`
+  (Pages ne publie que le site : sources, outils et notes exclus).

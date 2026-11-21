@@ -13,6 +13,7 @@ paths:
   - "es/**"
   - "scripts/verifier-pages.sh"
   - "tests/**"
+  - "_config.yml"
 ---
 
 # Pages générées
@@ -29,5 +30,7 @@ paths:
   de version et `LegalDocuments.version`. `{hebergeur}` ne désigne que l'hébergeur du site (GitHub) : l'hébergeur
   des données de l'app (Supabase) et le paragraphe sur les adresses IP s'écrivent à la main dans
   `src/legal-notice-*.md`, et changent avec `hebergeur`.
+- Publication : `_config.yml` exclut de GitHub Pages tout ce qui n'est pas le site ; un fichier ajouté hors
+  des pages (source, outil, note) y entre.
 - Page de suppression : délai et données repris mot pour mot de la politique de confidentialité ; libellés de l'app
   recopiés de ses fichiers de traduction (dépôt privé) et vérifiés par `tests/test_pages.py`.
